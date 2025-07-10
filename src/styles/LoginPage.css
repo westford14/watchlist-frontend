@@ -1,0 +1,84 @@
+/* Match dark background and font */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212; /* same as body bg */
+  color: #ffffff; /* white text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.login-form {
+  background-color: #1e1e1e; /* same as movie-card bg */
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  max-width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.login-form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #121212; /* darker input bg */
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form input::placeholder {
+  color: #666666;
+}
+
+.login-form input:focus {
+  outline: none;
+  box-shadow: 0 0 6px #ff4757; /* subtle red glow accent */
+  background-color: #1e1e1e;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff4757; /* match red accent */
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #e03e4e; /* darker red on hover */
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 2rem 1.5rem;
+  }
+}
