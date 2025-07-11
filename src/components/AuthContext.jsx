@@ -1,11 +1,10 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BACKEND_URL;
-
-// eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
+const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 
+// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +60,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   return useContext(AuthContext);
 }

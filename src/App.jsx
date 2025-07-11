@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,6 +11,7 @@ import Spinner from "./components/Spinner";
 import { AuthProvider } from "./components/AuthContext";
 import { useAuth } from "./components/AuthContext";
 
+// eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ children }) => {
   const { user, isLoading } = useAuth();
 

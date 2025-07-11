@@ -149,3 +149,7 @@ outputs/
 
 # Node
 node_modules/
+public/env.js
+
+# Helm
+values.yaml

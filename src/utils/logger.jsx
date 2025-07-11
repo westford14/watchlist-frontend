@@ -1,5 +1,4 @@
 const LOG_LEVELS = ["debug", "info", "warn", "error"];
-const BASE_URL = import.meta.env.REACT_APP_BACKEND_URL;
 
 const logger = {
   log: (level, message, data = null) => {

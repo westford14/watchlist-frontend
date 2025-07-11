@@ -4,6 +4,7 @@ const MIN = 0;
 const MAX = 300;
 const STEP = 10;
 
+// eslint-disable-next-line react/prop-types
 export default function FilterBar({ maxRuntime, setMaxRuntime }) {
   const handleChange = (e) => {
     setMaxRuntime(Number(e.target.value));

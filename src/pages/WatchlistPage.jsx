@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
 import "../styles/App.css";
 import { useAuth } from "../components/AuthContext";
 
-const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 
 export default function WatchlistPage() {
   const [movies, setMovies] = useState([]);
@@ -43,7 +43,6 @@ export default function WatchlistPage() {
       }
     };
     fetchMovies();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const filteredMovies = movies
