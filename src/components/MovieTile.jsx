@@ -1,3 +1,6 @@
+import React from "react";
+
+/* eslint-disable react/prop-types */
 export default function MovieTile({ movie, onAdd }) {
   return (
     <div

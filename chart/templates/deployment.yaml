@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "watchlist-frontend.fullname" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "watchlist-frontend.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "watchlist-frontend.name" . }}
+    spec:
+      containers:
+      - name: watchlist-frontend
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+          - containerPort: 3000
+        volumeMounts:
+        - name: env-config
+          mountPath: /app/build/env.js
+          subPath: env.js
+      volumes:
+      - name: env-config
+        configMap:
+          name: {{ include "watchlist-frontend.fullname" . }}-env
