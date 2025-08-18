@@ -56,3 +56,17 @@ h1 {
   font-size: 0.9rem;
   color: #ccc;
 }
+
+.lucky-button {
+  background-color: #ffa500;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lucky-button:hover {
+  background-color: #ff8c00;
+}
