@@ -22,6 +22,28 @@ export default function WatchlistPage() {
   const { user } = useAuth();
   const perPage = 25;
 
+  const handleFeelingLucky = async () => {
+    try {
+      const response = await axios.get(BASE_URL + "/v1/movie/lucky", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+
+      console.log(response.data);
+
+      if (response.status === 200 && response.data) {
+        const luckyMovie = response.data;
+        handleMovieClick(luckyMovie);
+      } else {
+        console.error("Failed to get a lucky movie:", response);
+      }
+    } catch (err) {
+      console.error("Error fetching lucky movie:", err);
+    }
+  };
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -111,6 +133,12 @@ export default function WatchlistPage() {
       <h1>Filterable Watchlist</h1>
 
       <FilterBar maxRuntime={maxRuntime} setMaxRuntime={setMaxRuntime} />
+
+      <div style={{ textAlign: "center", marginBottom: "1rem" }}>
+        <button onClick={handleFeelingLucky} className="lucky-button">
+          🎲
+        </button>
+      </div>
 
       <div className="movie-grid">
         {filteredMovies.map((movie) => (
