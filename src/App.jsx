@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import WatchlistPage from "./pages/WatchlistPage";
+import NotesPage from "./pages/NotesPage";
 import Spinner from "./components/Spinner";
 import { AuthProvider } from "./components/AuthContext";
 import { useAuth } from "./components/AuthContext";
@@ -37,6 +38,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <WatchlistPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notes/:tmdbId"
+            element={
+              <ProtectedRoute>
+                <NotesPage />
               </ProtectedRoute>
             }
           />
