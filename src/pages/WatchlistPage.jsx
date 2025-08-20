@@ -191,6 +191,9 @@ export default function WatchlistPage() {
             <p>
               <strong>Letterboxd Link</strong>
             </p>
+            <Link to={`/notes/${selectedMovie.tmdb_id}`}>
+              <button className="notes-button">📝 Take Notes</button>
+            </Link>
           </Link>
           {recommendations.length > 0 && (
             <div className="recommendations">
