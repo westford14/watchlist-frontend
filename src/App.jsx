@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import AllNotesPage from "./pages/AllNotesPage";
 import LoginPage from "./pages/LoginPage";
 import WatchlistPage from "./pages/WatchlistPage";
 import NotesPage from "./pages/NotesPage";
@@ -46,6 +47,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <NotesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notes"
+            element={
+              <ProtectedRoute>
+                <AllNotesPage />
               </ProtectedRoute>
             }
           />
