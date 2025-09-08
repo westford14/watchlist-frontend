@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
-import "../styles/App.css";
 import { useAuth } from "../components/AuthContext";
+import SearchBar from "../components/SearchBar";
 import "../styles/Sidebar.css";
+import "../styles/App.css";
 
 const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 const RECOMMENDER_URL = process.env.REACT_APP_RECOMMENDER_URL;
@@ -131,7 +132,7 @@ export default function WatchlistPage() {
   return (
     <div className="container">
       <h1>Filterable Watchlist</h1>
-
+      <SearchBar user={user} onResults={setMovies} />
       <FilterBar maxRuntime={maxRuntime} setMaxRuntime={setMaxRuntime} />
 
       <div style={{ textAlign: "center", marginBottom: "1rem" }}>
