@@ -153,3 +153,5 @@ public/env.js
 
 # Helm
 values.yaml
+
+.env.prod
