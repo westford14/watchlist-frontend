@@ -25,7 +25,10 @@ export default function WatchlistPage() {
 
   const handleFeelingLucky = async () => {
     try {
-      const response = await axios.get(BASE_URL + "/v1/movie/lucky", {
+      const data = JSON.stringify({
+        username: user.username,
+      });
+      const response = await axios.post(BASE_URL + "/v1/movie/lucky", data, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,
